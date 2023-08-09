@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Наши работы</title>
+	<link rel="stylesheet" href="{% static 'css/main.css' %}?v1">
+</head>
+<body>
+
+<div class="MainArticleBackground">
+	<div class="MainArticleContent AtricleWorks">
+		<div class="MainArticleContent__logo">
+			<img src="{% static 'img/logo.svg' %}" alt="">
+		</div>
+
+		<div class="MainArticleContent__text">
+			Здесь находятся все наши работы
+		</div>
+	</div>
+</div>
+
+<div class="downArrow">
+	<svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none" onclick="scrollToBlock('workCards')">
+		<circle cx="31" cy="31" r="31" transform="rotate(-90 31 31)" fill="url(#paint0_linear_66_440)"/>
+		<path d="M29.693 48.307C30.4148 49.0289 31.5852 49.0289 32.307 48.307L44.0703 36.5437C44.7922 35.8219 44.7922 34.6515 44.0703 33.9297C43.3485 33.2078 42.1781 33.2078 41.4563 33.9297L31 44.3859L20.5437 33.9297C19.8219 33.2078 18.6515 33.2078 17.9297 33.9297C17.2078 34.6515 17.2078 35.8219 17.9297 36.5437L29.693 48.307ZM29.1516 13L29.1516 47L32.8484 47L32.8484 13L29.1516 13Z" fill="white"/>
+		<defs>
+			<linearGradient id="paint0_linear_66_440" x1="62" y1="-1.90735e-06" x2="-1.90735e-06" y2="62" gradientUnits="userSpaceOnUse">
+				<stop offset="0.143048" stop-color="#8000FF"/>
+				<stop offset="0.858051" stop-color="#5A00B5"/>
+			</linearGradient>
+		</defs>
+	</svg>
+</div>
+
+<div class="workCards">
+	{% for work in works %}
+	<div class="workCard">
+		<div class="workCard__text">
+			<div class="workCardContentText">
+				<div class="workCardHeader workCardHeaderEn">
+					Open to more
+				</div>
+
+				<div class="workCardText">
+					{{ work.other_text }}
+				</div>
+
+				<div class="workCardHeader workCardHeaderRu">
+					Задачи проекта:
+				</div>
+
+				<div class="workCardText">
+					{{ work.task }}
+				</div>
+			</div>
+
+			<div class="workCardHashtages">
+				{{ work.hashtages }}
+			</div>
+		</div>
+
+		<div class="workCard__images">
+			<div class="imageWrapper">
+				<div class="imageSlider imageWrapperWorks">
+					{% for image in work.images.all %}
+						<div class="imageItem" style="background: url({{ image.image.url }}); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="sliderWrapper">
+				<svg class='arrowSlider leftArrow' xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none"><circle cx="31" cy="31" r="31" transform="rotate(-90 31 31)" fill="url(#paint0_linear_66_440)"/><path d="M29.693 48.307C30.4148 49.0289 31.5852 49.0289 32.307 48.307L44.0703 36.5437C44.7922 35.8219 44.7922 34.6515 44.0703 33.9297C43.3485 33.2078 42.1781 33.2078 41.4563 33.9297L31 44.3859L20.5437 33.9297C19.8219 33.2078 18.6515 33.2078 17.9297 33.9297C17.2078 34.6515 17.2078 35.8219 17.9297 36.5437L29.693 48.307ZM29.1516 13L29.1516 47L32.8484 47L32.8484 13L29.1516 13Z" fill="white"/><defs><linearGradient id="paint0_linear_66_440" x1="62" y1="-1.90735e-06" x2="-1.90735e-06" y2="62" gradientUnits="userSpaceOnUse"><stop offset="0.143048" stop-color="#8000FF"/><stop offset="0.858051" stop-color="#5A00B5"/></linearGradient></defs></svg>
+				<div class="rightSide__slider">
+					{% with work.images.all|length as n  %}
+						{% with '1'|center:n as range %}
+							{% for _ in range %}
+								{% if forloop.counter == 1 %}
+									<div class="slider__button_active slider__button"></div>
+								{% else %}
+									<div class="slider__button"></div>
+								{% endif %}
+								{% if forloop.counter != n %}
+									<div class="slider__decor"></div>
+									<div class="slider__decor"></div>
+									<div class="slider__decor"></div>
+								{% endif %}
+							{% endfor %}
+						{% endwith %}
+					{% endwith %}
+				</div>
+				<svg class='arrowSlider rightArrow' xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none"><circle cx="31" cy="31" r="31" transform="rotate(-90 31 31)" fill="url(#paint0_linear_66_440)"/><path d="M29.693 48.307C30.4148 49.0289 31.5852 49.0289 32.307 48.307L44.0703 36.5437C44.7922 35.8219 44.7922 34.6515 44.0703 33.9297C43.3485 33.2078 42.1781 33.2078 41.4563 33.9297L31 44.3859L20.5437 33.9297C19.8219 33.2078 18.6515 33.2078 17.9297 33.9297C17.2078 34.6515 17.2078 35.8219 17.9297 36.5437L29.693 48.307ZM29.1516 13L29.1516 47L32.8484 47L32.8484 13L29.1516 13Z" fill="white"/><defs><linearGradient id="paint0_linear_66_440" x1="62" y1="-1.90735e-06" x2="-1.90735e-06" y2="62" gradientUnits="userSpaceOnUse"><stop offset="0.143048" stop-color="#8000FF"/><stop offset="0.858051" stop-color="#5A00B5"/></linearGradient></defs></svg>
+			</div>
+		</div>
+	</div>
+	<div class="lineSplit"></div>
+	{% endfor %}
+</div>
+
+<div class="contacts">
+	<div class="contacts__links">
+		<a class="links__item linkItem" href="tel:+998970000000">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/Phone.png' %}">
+			</div>
+
+			<div class="linkItem__text">
+				+998 97 000 00 00
+			</div>
+		</a>
+
+		<a class="links__item linkItem" href="mailto:marketing-agency@yandex.ru">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/mail.png' %}">
+			</div>
+
+			<div class="linkItem__text" style="font-size: 18px;">
+				marketing-agency@yandex.ru
+			</div>
+		</a>
+
+		<a class="links__item linkItem" href="У меня инстаграм не работает. Вставьте ссылку сами">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/inst.png' %}">
+			</div>
+
+			<div class="linkItem__text">
+				marketing-agency
+			</div>
+		</a>
+
+		<a class="links__item linkItem" href="Хотя я вообще не знаю реальные адреса вашей организации">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/telegram.png' %}">
+			</div>
+
+			<div class="linkItem__text">
+				marketing-agency
+			</div>
+		</a>
+
+	</div>
+</div>
+
+<footer>
+	<img src="{% static 'img/logo.svg' %}" alt="">
+</footer>
+<script src='{% static "js/works.js" %}'></script>
+</body>
+</html>

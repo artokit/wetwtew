@@ -1,0 +1,439 @@
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>NebulaNet - Маркетинговая компания</title>
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css' %}" />
+</head>
+<body>
+<section class="top-nav">
+	<input id="menu-toggle" type="checkbox" onclick='viewMenu()' />
+	<label class='menu-button-container' for="menu-toggle">
+		<div class='menu-button'></div>
+	</label>
+</section>
+<div class="MainArticleBackground">
+	<div class="MainArticleContent">
+		<ul class="menu">
+			<li><a class="nav__item" onclick="scrollToBlock('ourCases')">Портфолио</a></li>
+			<li><a class="nav__item" onclick="scrollToBlock('Team')">Наша Команда</a></li>
+			<li><a class="nav__item" onclick="scrollToBlock('about')">О компании</a></li>
+			<li><a class="nav__item" onclick="scrollToBlock('contacts')">Контакты</a></li>
+		</ul>
+		<div class="wrapper">
+			<div class="header">
+				<div class="header__logo">
+					<img src="{% static 'img/logo.svg' %}" alt="">
+				</div>
+				<div class="header__nav nav">
+					<a class="nav__item" onclick="scrollToBlock('ourCases')">Портфолио</a>
+					<a class="nav__item" onclick="scrollToBlock('Team')">Наша Команда</a>
+					<a class="nav__item" onclick="scrollToBlock('about')">О компании</a>
+					<a class="nav__item" onclick="scrollToBlock('contacts')">Контакты</a>
+				</div>
+			</div>
+
+			<div class='MainArticleContent__helloContent'>
+				<div class="helloContent__text">
+					<h1 class='helloText'>NebulaNet</h1>
+					<h2>Добро пожаловать на платформу Nebula Net - ваш надежный партнер в области рекламы и маркетинга.</h2>
+					<a onclick="scrollToBlock('contacts')" class='linkButton'>Связаться с нами</a>
+					<div class='linkCaption'>консультация бесплатно</div>
+				</div>
+				<div class='helloContent__image'>
+					<img src="{% static 'img/notebook.png' %}" alt="">
+				</div>
+				<div class="hiddenContent">
+					<a class='linkButton hiddenMobile' onclick="scrollToBlock('contacts')">Связаться с нами</a>
+					<div class='linkCaption hiddenMobile'>консультация бесплатно</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="servicesBackground">
+	<div class="services">
+		<div class="services__header">Сервисы, которые обеспечивает компания</div>
+		<div class="services__blocks owl-theme">
+			<div class="blocks__item">Бесплатная консультация по маркетингу</div>
+			<div class="blocks__item">Бесплатная креативная бизнес-реклама</div>
+			<div class="blocks__item">Содействие в создании дизайна баннеров, визитных корточек и тд компании</div>
+			<div class="blocks__item" style='font-size: 36px'>SММ</div>
+			<div class="blocks__item">Создание веб-сайтов и клиентская поддержка</div>
+			<div class="blocks__item">Распространение рекламы на нашей платформе</div>
+		</div>
+	</div>
+</div>
+
+<div class="ourCases">
+	<div class="ourCases__runWord runWord">
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+		<span class="runWord__white">Наши кейсы</span><span class="runWord__black">Наши кейсы</span>
+	</div>
+
+	<div class="ourCases__content">
+		<div class="content__leftSide">
+
+			<div class="leftSide__item">
+				<div class="ArticleHeader">
+					<div class="HeaderItem__active">
+						<div class="HeaderItemRu">Последние работы</div>
+						<div class="HeaderItemEn">Open to more</div>
+					</div>
+
+					<div class="ArticleHeader__HeaderItem">
+						<div class="HeaderItemRu">Последние работы</div>
+						<div class="HeaderItemEn">Open to more</div>
+					</div>
+
+					<div class="ArticleHeader__HeaderItem">
+						<div class="HeaderItemRu">Последние работы</div>
+						<div class="HeaderItemEn">Open to more</div>
+					</div>
+
+					<div class="ArticleHeader__HeaderItem">
+						<div class="HeaderItemRu">Последние работы</div>
+						<div class="HeaderItemEn">Open to more</div>
+					</div>
+
+					<div class="ArticleHeader__HeaderItem">
+						<div class="HeaderItemRu">Последние работы</div>
+						<div class="HeaderItemEn">Open to more</div>
+					</div>
+					<div class="ArticleText__active">
+						{{ works.0.other_text }}
+					</div>
+					{% for work in works %}
+					<div class="ArticleText">
+						{{ work.other_text }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+			<a class="allCasesButton" href="/works">
+				<span>ВСЕ КЕЙСЫ</span>
+				<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928932C6.95262 0.538408 6.31946 0.538408 5.92893 0.928932C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM0 9H13V7H0V9Z" fill="white"/></svg>
+			</a>
+		</div>
+		<div class="content__rightSide">
+			<div class="sliderWrapperRight">
+				<div class="rightSide__slider">
+					{% with works|length as n  %}
+					{% with '1'|center:n as range %}
+					{% for _ in range %}
+					{% if forloop.counter == 1 %}
+					<div class="slider__button_active slider__button"></div>
+					{% else %}
+					<div class="slider__button"></div>
+					{% endif %}
+					{% if forloop.counter != n %}
+					<div class="slider__decor"></div>
+					<div class="slider__decor"></div>
+					<div class="slider__decor"></div>
+					{% endif %}
+					{% endfor %}
+					{% endwith %}
+					{% endwith %}
+				</div>
+				<a class="allCasesButton allCasesButtonMobile" href="/works">
+					<span>ВСЕ КЕЙСЫ</span>
+					<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928932C6.95262 0.538408 6.31946 0.538408 5.92893 0.928932C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM0 9H13V7H0V9Z" fill="white"/></svg>
+				</a>
+			</div>
+			<div class="rightSide__image">
+				<div class="imageWrapper imageWrapperRight">
+					<div class="imageSlider">
+						{% for work in works %}
+						<div class="imageItem" style="background: url({{ work.images.all.0.image.url }}); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="TeamBackground">
+	<div class="Team">
+		<div class="ourCases__runWord runWord runWordTeam">
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+			<span class="runWord__white">Наша команда</span><span class="runWord__black">Наша команда</span>
+		</div>
+
+		<div class="Team__spec">
+			<div class="spec__image">
+				<div class="specImageAppearance">
+					<div class="specImageAppearance__header">
+						Николай
+					</div>
+					<div class="specImageAppearance__spec">
+						SMM специалист
+					</div>
+				</div>
+			</div>
+
+			<div class="spec__text">
+				<div class="specHeaderInfo">
+					<svg class='quoteImage' xmlns="http://www.w3.org/2000/svg" width="151" height="122" viewBox="0 0 151 122" fill="none">
+						<path d="M0 121.102V80.5864C0 65.4486 2.67137 51.4981 8.01412 38.7349C13.3569 25.9717 22.4098 13.06 35.1731 0L58.325 18.2544C48.8267 28.0494 42.1483 37.1024 38.2897 45.4133C34.431 53.7243 32.5017 62.6289 32.5017 72.1271L18.6996 59.2154H62.332V121.102H0ZM88.6005 121.102V80.5864C88.6005 65.4486 91.2719 51.4981 96.6146 38.7349C101.957 25.9717 111.01 13.06 123.774 0L146.925 18.2544C137.427 28.0494 130.749 37.1024 126.89 45.4133C123.032 53.7243 121.102 62.6289 121.102 72.1271L107.3 59.2154H150.933V121.102H88.6005Z" fill="white"/></svg>
+
+					<div class="specHeaderInfo__text">
+						<h2>Матлюбджан</h2>
+						<h3>SMM Специалист</h3>
+					</div>
+
+				</div>
+
+				<span>
+						Наша цель - помочь вам достичь успеха в вашем бизнесе, убедиться, что ваши товары, услуги и бренд достигают нужной аудитории. Мы стремимся помочь вам понять уникальность вашего бренда и предоставить наилучшие решения для вашего бизнеса.<br><br>Мы гордимся тем, что предоставляем нашим клиентам высокое качество работы и индивидуальный подход в каждом проекте. Наша команда состоит из профессионалов, которые готовы предложить вам лучшие решения и помочь вам достичь успеха в вашем бизнесе.
+					</span>
+
+				<svg id='quoteRotate' class='quoteImage' xmlns="http://www.w3.org/2000/svg" width="151" height="122" viewBox="0 0 151 122" fill="none">
+					<path d="M0 121.102V80.5864C0 65.4486 2.67137 51.4981 8.01412 38.7349C13.3569 25.9717 22.4098 13.06 35.1731 0L58.325 18.2544C48.8267 28.0494 42.1483 37.1024 38.2897 45.4133C34.431 53.7243 32.5017 62.6289 32.5017 72.1271L18.6996 59.2154H62.332V121.102H0ZM88.6005 121.102V80.5864C88.6005 65.4486 91.2719 51.4981 96.6146 38.7349C101.957 25.9717 111.01 13.06 123.774 0L146.925 18.2544C137.427 28.0494 130.749 37.1024 126.89 45.4133C123.032 53.7243 121.102 62.6289 121.102 72.1271L107.3 59.2154H150.933V121.102H88.6005Z" fill="white"/></svg>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about">
+	<div class="ourCases__runWord runWord runWordAbout">
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+		<span class="runWord__white">О компании</span><span class="runWord__black">О компании</span>
+	</div>
+
+	<div class="about__we">
+		<div class="we__text">
+			<h2 class='desktopWeText'>NebulaNet</h2>
+			<div>
+				Мы - инновационная маркетинговая компания, которая превращает ваши бизнес-идеи в реальность. Наше волшебство основано на данных, опыте и страсти. Приковывайте внимание аудитории чистыми идеями, точными данными и уникальными решениями. Наша экспертная команда заботится о каждой детали вашей кампании - от дизайна до маркетинговых решений. С нами вы станете героем своей истории успеха, а ваш бренд станет ярким и привлекательным для целевой аудитории. Откройте двери к безграничным возможностям - доверьтесь нашей маркетинговой компании!
+			</div>
+		</div>
+
+		<div class="we__image">
+			<h2 class='mobileWeText'>NebulaNet</h2>
+			<object class='objectImage' type="image/svg+xml" data="picture.svg">
+				<img src="{% static 'img/logo.svg' %}" alt="logo">
+			</object>
+		</div>
+	</div>
+</div>
+
+<div class="interestingBackground">
+	<div class="interesting">
+		<div class="ourCases__runWord runWord runWordInteresting">
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+			<span class="runWord__white">Интересные блоги от нас</span><span class="runWord__black">Интересные блоги от нас</span>
+		</div>
+
+		<div class="owl-carousel owl-theme">
+			{% for post in posts %}
+			<a class='carousel__item' id='pk{{ post.pk }}' onclick="setModalWindow(this)" style='background: url({{ post.image.image.url }});background-size: cover;background-position: center;background-repeat: no-repeat;'>
+				<div class="item__content">
+					<div class="itemContentWrapper">
+						<div class="carouselHeader">
+							{{ post.heading1 }}
+						</div>
+
+						<div class="carouselContent">
+							{{ post.heading2 }}
+						</div>
+					</div>
+				</div>
+			</a>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
+
+<div class="contacts">
+	<div class="ourCases__runWord runWord runWordContacts">
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+		<span class="runWord__white">Контакты</span><span class="runWord__black">Контакты</span>
+	</div>
+
+	<div class="contacts__info">
+		Если вы заинтересованы в наших услугах, свяжитесь с нами по следующим контактам
+	</div>
+
+	<div class="contacts__links">
+		<a class="links__item linkItem" href="tel:+998970000000">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/Phone.png' %}">
+			</div>
+
+			<div class="linkItem__text">
+				+998 97 000 00 00
+			</div>
+		</a>
+
+		<a class="links__item linkItem" href="mailto:marketing-agency@yandex.ru">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/mail.png' %}">
+			</div>
+
+			<div class="linkItem__text" style="font-size: 18px;">
+				marketing-agency@yandex.ru
+			</div>
+		</a>
+
+		<a class="links__item linkItem" href="У меня инстаграм не работает. Вставьте ссылку сами">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/inst.png' %}">
+			</div>
+
+			<div class="linkItem__text">
+				marketing-agency
+			</div>
+		</a>
+
+		<a class="links__item linkItem" href="Хотя я вообще не знаю реальные адреса вашей организации">
+			<div class="linkItem__icon">
+				<img src="{% static 'img/telegram.png' %}">
+			</div>
+
+			<div class="linkItem__text">
+				marketing-agency
+			</div>
+		</a>
+
+	</div>
+
+	<div class="contacts__motivatePhrase">
+		Мы готовы ответить на все ваши вопросы и предоставить наилучшие решения для вашего бизнеса.
+	</div>
+</div>
+
+<footer>
+	<img src="{% static 'img/logo.svg' %}" alt="">
+</footer>
+
+<div class="modalWindowWrapper">
+
+	<div class="modalWindow">
+		<div class="modalWindow__photo"></div>
+
+		<div class="modalWindow__content modalWindowContent">
+			<div class="modalWindowContent__heading">
+				Заголовок
+			</div>
+
+			<div class="modalWindowContent__underHeading">
+				Подзаголовок
+			</div>
+
+			<div class="modalWindowContent__text">
+				f
+			</div>
+		</div>
+
+		<div class="modalWindow__footer">
+			<div class='modalWindowSplit'></div>
+			<div class="contacts__links">
+				<a class="links__item linkItem" href="tel:+998970000000">
+					<div class="linkItem__icon">
+						<img src="{% static 'img/Phone.png' %}">
+					</div>
+
+					<div class="linkItem__text">
+						+998 97 000 00 00
+					</div>
+				</a>
+
+				<a class="links__item linkItem" href="mailto:marketing-agency@yandex.ru">
+					<div class="linkItem__icon">
+						<img src="{% static 'img/mail.png' %}">
+					</div>
+
+					<div class="linkItem__text" style="font-size: 14.85px;">
+						marketing-agency@yandex.ru
+					</div>
+				</a>
+
+				<a class="links__item linkItem" href="У меня инстаграм не работает. Вставьте ссылку сами">
+					<div class="linkItem__icon">
+						<img src="{% static 'img/inst.png' %}">
+					</div>
+
+					<div class="linkItem__text">
+						marketing-agency
+					</div>
+				</a>
+
+				<a class="links__item linkItem" href="Хотя я вообще не знаю реальные адреса вашей организации">
+					<div class="linkItem__icon">
+						<img src="{% static 'img/telegram.png' %}">
+					</div>
+
+					<div class="linkItem__text">
+						marketing-agency
+					</div>
+				</a>
+
+			</div>
+			<div class='modalWindowSplit'></div>
+
+			<div class="controlModal">
+				<div class="controlModal__item controlWithArrow prevPage">
+					<div class="arrowBackModal arrowModal">
+						<svg width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.939339 10.9393C0.353552 11.5251 0.353552 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.80761 11.0711 0.80761 10.4853 1.3934L0.939339 10.9393ZM29 10.5L2 10.5L2 13.5L29 13.5L29 10.5Z" fill="white"/></svg>
+					</div>
+					<div class="itemControlText">Прошлая статья</div>
+				</div>
+
+				<div class="controlModal__item controlModalClose">Закрыть</div>
+
+				<div class="controlModal__item controlWithArrow nextPage">
+					<div class="itemControlText">Следующая статья</div>
+					<div class="arrowBackModal arrowModal">
+						<svg width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.0607 13.0607C28.6464 12.4749 28.6464 11.5251 28.0607 10.9393L18.5147 1.3934C17.9289 0.807611 16.9792 0.807611 16.3934 1.3934C15.8076 1.97919 15.8076 2.92893 16.3934 3.51472L24.8787 12L16.3934 20.4853C15.8076 21.0711 15.8076 22.0208 16.3934 22.6066C16.9792 23.1924 17.9289 23.1924 18.5147 22.6066L28.0607 13.0607ZM0 13.5L27 13.5V10.5L0 10.5L0 13.5Z" fill="white"/></svg>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="{% static 'js/jQuery.min.js' %}"></script>
+<script src="{% static 'js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
