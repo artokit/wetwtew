@@ -1,8 +1,21 @@
 from django.db import models
+from django.utils.safestring import mark_safe
+
+
+def get_thumbnail_preview(images):
+    s = '<div style="min-width: 300px">'
+    for image in images:
+        if isinstance(image, WorkPhoto):
+            url = image.image.url
+        else:
+            url = image.url
+
+        s += '<img src="{}" style="display: block; min-width: 300px; margin: 30px auto; width: 50%; max-width: 700px">'.format(url)
+    return mark_safe(s + '</div>')
 
 
 class WorkPhoto(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(verbose_name='Изображение')
 
     def __str__(self):
         return str(self.image)
@@ -10,6 +23,10 @@ class WorkPhoto(models.Model):
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
+
+    @property
+    def thumbnail_preview(self):
+        return get_thumbnail_preview([self.image, ])
 
 
 class WorkPost(models.Model):
@@ -25,6 +42,10 @@ class WorkPost(models.Model):
         verbose_name = 'Работа'
         verbose_name_plural = 'Работы'
 
+    @property
+    def thumbnail_preview(self):
+        return get_thumbnail_preview(self.images.all())
+
 
 class BlogPost(models.Model):
     heading1 = models.CharField(max_length=150, verbose_name='Заголовок')
@@ -38,3 +59,7 @@ class BlogPost(models.Model):
     class Meta:
         verbose_name = 'Запись'
         verbose_name_plural = 'Записи'
+
+    @property
+    def thumbnail_preview(self):
+        return get_thumbnail_preview([self.image, ])

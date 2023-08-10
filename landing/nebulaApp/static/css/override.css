@@ -1,0 +1,9 @@
+.form-row.field-thumbnail_preview .flex-container {
+    display: block !important
+}
+
+@media (min-width: 2400px) {
+    .form-row.field-thumbnail_preview .flex-container {
+        display: flex !important
+    }
+}

@@ -115,8 +115,11 @@ for (let i of document.querySelectorAll('.controlModal__item')) {
 }
 
 $(document).ready(function(){
-  $('.owl-carousel').owlCarousel({loop: true, autoWidth: true, center: true});
-  $('.services__blocks').owlCarousel({loop: true, autoWidth: true, center: true});
+    $('.owl-carousel').owlCarousel({loop: true, autoWidth: true, center: true});
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
+  		$('.services__blocks').owlCarousel({loop: true, autoWidth: true, center: true});
+  		document.querySelector('.services__blocks').className = 'services__blocks mobileServices'
+    }
 });
 
 document.querySelector('.controlModalClose').onclick = () => {
