@@ -17,6 +17,24 @@ class PostAdmin(admin.ModelAdmin):
         }
 
 
+# class ProductImageInline(admin.TabularInline):
+#     model = WorkPost
+    # readonly_fields = ('id', 'image_tag',)
+    # extra = 1
+
+
+# class ProductVariantInline(admin.TabularInline):
+#     model = WorkPost
+    # readonly_fields = ('id',)
+    # extra = 1
+
+
+# @admin.register(WorkPhoto)
+# class ProductAdmin(admin.ModelAdmin):
+#     inlines = [ProductImageInline]
+
+
 admin.site.register(WorkPost, PostAdmin)
+# admin.site.register(WorkPost, PostAdmin)
 admin.site.register(WorkPhoto, PostAdmin)
 admin.site.register(BlogPost, PostAdmin)

@@ -27,7 +27,9 @@
 		<div class="wrapper">
 			<div class="header">
 				<div class="header__logo">
-					<img src="{% static 'img/logo.svg' %}" alt="">
+					<a href='/'>
+						<img src="{% static 'img/logo.svg' %}" alt="">
+					</a>
 				</div>
 				<div class="header__nav nav">
 					<a class="nav__item" onclick="scrollToBlock('ourCases')">Портфолио</a>
@@ -61,12 +63,12 @@
 	<div class="services">
 		<div class="services__header">Сервисы, которые обеспечивает компания</div>
 		<div class="services__blocks owl-theme">
-			<div class="blocks__item">Бесплатная консультация по маркетингу</div>
-			<div class="blocks__item">Бесплатная креативная бизнес-реклама</div>
-			<div class="blocks__item">Содействие в создании дизайна баннеров, визитных корточек и тд компании</div>
-			<div class="blocks__item itemSMM" style='font-size: 36px'>SММ</div>
-			<div class="blocks__item">Создание веб-сайтов и клиентская поддержка</div>
-			<div class="blocks__item">Распространение рекламы на нашей платформе</div>
+			<div class="blocks__item" onclick="scrollToBlock('contacts')">Бесплатная консультация по маркетингу</div>
+			<div class="blocks__item" onclick="scrollToBlock('contacts')">Бесплатная креативная бизнес-реклама</div>
+			<div class="blocks__item" onclick="scrollToBlock('contacts')">Содействие в создании дизайна баннеров, визитных корточек и тд компании</div>
+			<div class="blocks__item itemSMM" style='font-size: 36px' onclick="scrollToBlock('contacts')">SММ</div>
+			<div class="blocks__item" onclick="scrollToBlock('contacts')">Создание веб-сайтов и клиентская поддержка</div>
+			<div class="blocks__item" onclick="scrollToBlock('contacts')">Распространение рекламы на нашей платформе</div>
 		</div>
 	</div>
 </div>
@@ -236,9 +238,11 @@
 
 		<div class="we__image">
 			<h2 class='mobileWeText'>NebulaNet</h2>
-			<object class='objectImage' type="image/svg+xml" data="picture.svg">
-				<img src="{% static 'img/logo.svg' %}" alt="logo">
-			</object>
+			<a href='/'>
+				<object class='objectImage' type="image/svg+xml" data="picture.svg">
+					<img src="{% static 'img/logo.svg' %}" alt="logo">
+				</object>
+			</a>
 		</div>
 	</div>
 </div>
@@ -342,7 +346,9 @@
 </div>
 
 <footer>
-	<img src="{% static 'img/logo.svg' %}" alt="">
+	<a href='/'>
+		<img src="{% static 'img/logo.svg' %}" alt="">
+	</a>
 </footer>
 
 <div class="modalWindowWrapper">

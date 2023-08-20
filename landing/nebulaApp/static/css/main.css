@@ -1284,7 +1284,6 @@ footer img {
 
 .workCard__text {
     display: flex;
-    height: 472px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center
